@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <h2>Dual Inference Engine</h2>
+</div>
+
+<div class="dashboard-grid">
+    <!-- Live Webcam Card -->
+    <div class="glass-card" style="grid-column: span 2;">
+        <h3>Live Webcam Feed</h3>
+        <p style="color: var(--text-dim); margin-bottom: 1rem;">Real-time Mask & Emotion analysis</p>
+
+        <div id="video-wrapper">
+            <img id="webcam-feed" src="{{ url_for('video_feed') }}">
+            <div class="overlay-status">
+                <span class="badge badge-mask" id="mask-status">Processing...</span>
+                <span class="badge badge-emotion" id="emotion-status">Analyzing...</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 10px;">
+            <button class="btn-primary" onclick="window.location.reload()">Refresh Stream</button>
+            <button class="btn-primary" style="background: transparent; border: 1px solid var(--primary);">Capture
+                Analysis</button>
+        </div>
+    </div>
+
+    <!-- Image Upload Card -->
+    <div class="glass-card">
+        <h3>Image Analysis</h3>
+        <div
+            style="border: 2px dashed var(--glass-border); padding: 2rem; border-radius: 15px; text-align: center; margin-top: 1rem;">
+            <p style="color: var(--text-dim);">Drag and drop photo or</p>
+            <button class="btn-primary" style="margin-top: 10px;">Browse Files</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

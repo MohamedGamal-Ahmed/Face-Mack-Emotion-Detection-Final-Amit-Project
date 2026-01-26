@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <h2>Data & Model Analytics</h2>
+</div>
+
+<section style="margin-bottom: 3rem;">
+    <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Before Training (Step 5: EDA)</h3>
+    <div class="dashboard-grid">
+        <div class="glass-card">
+            <h4>Class Distribution</h4>
+            <img src="{{ url_for('static', filename='pre_training_dist.png') }}"
+                style="width: 100%; border-radius: 15px; margin-top: 10px;" alt="Pre-training Stats"
+                onerror="this.src='https://placehold.co/600x400/1e293b/f8fafc?text=Run+Data+Analysis+Scan'">
+        </div>
+        <div class="glass-card">
+            <h4>Dataset Split</h4>
+            <img src="{{ url_for('static', filename='dataset_split.png') }}"
+                style="width: 100%; border-radius: 15px; margin-top: 10px;" alt="Dataset Split"
+                onerror="this.src='https://placehold.co/600x400/1e293b/f8fafc?text=Generate+Split+Pie'">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3 style="margin-bottom: 1.5rem; color: var(--primary);">After Training (Steps 7 & 8: Performance)</h3>
+    <div class="dashboard-grid">
+        <div class="glass-card">
+            <h4>Learning Curves</h4>
+            <img src="{{ url_for('static', filename='results.png') }}"
+                style="width: 100%; border-radius: 15px; margin-top: 10px;">
+        </div>
+        <div class="glass-card">
+            <h4>Confusion Matrix</h4>
+            <img src="{{ url_for('static', filename='confusion_matrix.png') }}"
+                style="width: 100%; border-radius: 15px; margin-top: 10px;">
+        </div>
+        <div class="glass-card">
+            <h4>F1 & PR Curves</h4>
+            <div style="display: flex; gap: 10px;">
+                <img src="{{ url_for('static', filename='F1_curve.png') }}" style="width: 48%; border-radius: 10px;">
+                <img src="{{ url_for('static', filename='PR_curve.png') }}" style="width: 48%; border-radius: 10px;">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

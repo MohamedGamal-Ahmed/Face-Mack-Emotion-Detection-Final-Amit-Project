@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <h2>Smart Face Monitoring</h2>
+</div>
+
+<div class="dashboard-grid">
+    <div class="glass-card" style="grid-column: span 2;">
+        <h3>Welcome to graduation project</h3>
+        <p style="color: var(--text-dim); margin-top: 10px;">
+            This system implements a professional ML pipeline for simultaneous **Face Mask Detection** and **Emotion
+            Recognition**.
+            Following the AMIT Standard, we analyze data integrity before training and evaluate performance with deep
+            metrics.
+        </p>
+        <div style="margin-top: 2rem;">
+            <a href="/detect" class="btn-primary">Start Real-time Analysis</a>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <h3>Pipeline Status</h3>
+        <ul style="list-style: none; margin-top: 15px;">
+            <li style="margin-bottom: 8px;">✅ Step 1-4: Data Processing</li>
+            <li style="margin-bottom: 8px;">✅ Step 5: EDA Visualization</li>
+            <li style="margin-bottom: 8px;">✅ Step 7: Model Training</li>
+            <li style="margin-bottom: 8px;">✅ Step 8: Performance Evaluation</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

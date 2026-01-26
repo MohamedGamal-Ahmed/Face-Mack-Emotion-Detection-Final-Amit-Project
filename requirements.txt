@@ -1,0 +1,10 @@
+flask
+opencv-python
+torch
+torchvision
+matplotlib
+seaborn
+pandas
+pillow
+numpy
+pathlib
